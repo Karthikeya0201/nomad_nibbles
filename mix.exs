@@ -54,7 +54,8 @@ defmodule NomadNibbles.MixProject do
       {:nimble_csv, "~> 1.1"},
       {:timex, "~> 3.7"},
       {:absinthe_plug, "~> 1.5"},
-      {:absinthe_phoenix, "~> 2.0"}
+      {:absinthe_phoenix, "~> 2.0"},
+      {:cors_plug, "~> 3.0"}
     ]
   end
 
