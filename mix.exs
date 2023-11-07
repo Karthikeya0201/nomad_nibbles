@@ -52,7 +52,9 @@ defmodule NomadNibbles.MixProject do
       {:dns_cluster, "~> 0.1.1"},
       {:plug_cowboy, "~> 2.5"},
       {:nimble_csv, "~> 1.1"},
-      {:timex, "~> 3.7"}
+      {:timex, "~> 3.7"},
+      {:absinthe_plug, "~> 1.5"},
+      {:absinthe_phoenix, "~> 2.0"}
     ]
   end
 

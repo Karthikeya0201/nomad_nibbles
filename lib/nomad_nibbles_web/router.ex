@@ -14,6 +14,18 @@ defmodule NomadNibblesWeb.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api" do
+    pipe_through :api
+
+    forward "/v1", Absinthe.Plug, schema: NomadNibblesWeb.Schema
+
+    forward("/graphql", Absinthe.Plug.GraphiQL,
+      schema: NomadNibblesWeb.Schema,
+      socket: NomadNibblesWeb.UserSocket,
+      interface: :playground
+    )
+  end
+
   scope "/", NomadNibblesWeb do
     pipe_through :browser
 
