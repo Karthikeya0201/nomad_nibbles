@@ -11,7 +11,7 @@ defmodule NomadNibbles.FoodPermits.FoodPermit do
     field :approved, :naive_datetime
     field :y, :float
     field :x, :float
-    field :locationid, :integer
+    field :location_id, :integer
     field :applicant, :string
     field :facility_type, :string
     field :cnn, :integer
@@ -31,7 +31,7 @@ defmodule NomadNibbles.FoodPermits.FoodPermit do
     field :police_districts, :integer
     field :supervisor_districts, :integer
     field :zip_codes, :integer
-    field :neighborhoods_old, :string
+    field :neighborhoods_old, :integer
 
     timestamps(type: :utc_datetime)
   end
@@ -39,7 +39,39 @@ defmodule NomadNibbles.FoodPermits.FoodPermit do
   @doc false
   def changeset(food_permit, attrs) do
     food_permit
-    |> cast(attrs, [:locationid, :applicant, :facility_type, :cnn, :location_description, :address, :blocklot, :block, :lot, :permit, :status, :food_items, :x, :y, :latitude, :longitude, :schedule, :dayshours, :noisent, :approved, :received, :prior_permit, :expiration_date, :location, :fire_prevention_districts, :police_districts, :supervisor_districts, :zip_codes, :neighborhoods_old])
-    |> validate_required([:locationid, :applicant, :facility_type, :cnn, :location_description, :address, :blocklot, :block, :lot, :permit, :status, :food_items, :x, :y, :latitude, :longitude, :schedule, :dayshours, :noisent, :approved, :received, :prior_permit, :expiration_date, :location, :fire_prevention_districts, :police_districts, :supervisor_districts, :zip_codes, :neighborhoods_old])
+    |> cast(attrs, [
+      :location_id,
+      :applicant,
+      :facility_type,
+      :cnn,
+      :location_description,
+      :address,
+      :blocklot,
+      :block,
+      :lot,
+      :permit,
+      :status,
+      :food_items,
+      :x,
+      :y,
+      :latitude,
+      :longitude,
+      :schedule,
+      :dayshours,
+      :noisent,
+      :approved,
+      :received,
+      :prior_permit,
+      :expiration_date,
+      :location,
+      :fire_prevention_districts,
+      :police_districts,
+      :supervisor_districts,
+      :zip_codes,
+      :neighborhoods_old
+    ])
+    |> validate_required([
+      :location_id
+    ])
   end
 end

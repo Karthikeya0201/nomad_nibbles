@@ -31,7 +31,7 @@ defmodule NomadNibbles.Repo.Migrations.CreateFoodPermits do
       add :police_districts, :integer
       add :supervisor_districts, :integer
       add :zip_codes, :integer
-      add :neighborhoods_old, :string
+      add :neighborhoods_old, :integer
 
       timestamps(type: :utc_datetime)
     end
